@@ -1,5 +1,28 @@
 NOTES
 
+
+## developer notes
+
+### How to setup this project on your machine?
+
+```shell
+# INSTALL required libraries
+
+pip install flask
+```
+
+### How to run this project?
+```shell
+# RUN IN DEBUG MODE
+flask --app main --debug run
+
+# RUN WITHOUT DEBUG MODE
+flask --app main run
+
+# RUN ON NON_DEFAULT PORT
+flask --app main --port <port-number> run 
+```
+
 ## project structure
 
 ```
