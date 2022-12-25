@@ -32,14 +32,18 @@ app = Flask(__name__)
 
 @app.route("/")
 def welcome():
-    return render_template("welcome.html")
+    return render_template("welcome.html", cards=db)
 
 
 @app.route("/card/<int:index>")
 def card_view(index):
     try:
         card = db[index]
-        return render_template("card.html", card=card, index=index)
+        return render_template(
+            "card.html",
+            card=card,
+            index=index
+        )
     except IndexError:
         abort(404)
 

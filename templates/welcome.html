@@ -12,7 +12,17 @@
 <h1> Welcome to my application home page </h1>
 <p>
 This application is being built for demo purpose
+
+    {% for card in cards %}
+        <br>
+        <br>
+        index - {{ loop.index0 }} -
+        <a href="{{ url_for("card_view", index=loop.index0) }}">
+        {{ card.question }}
+        </a>
+    {% endfor %}
 </p>
+   <br>
 <img src="static/flasklogo.png">
 
 {}
