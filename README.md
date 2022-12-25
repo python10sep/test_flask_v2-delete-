@@ -51,3 +51,15 @@ test_flask_v2 (project root)
 - http://127.0.0.1:5000/api/cards
     
     
+## Reference material for this project
+
+JINJA templates and it's syntax
+
+```markdown
+- JINJA is a package used by flask (as dependency). 
+- When we use `render_template()` function from flask, we basically have to
+  use JINJA template syntax.
+- JINJA syntax can be referred from following link.
+```
+JINJA template syntax
+https://jinja.palletsprojects.com/en/2.11.x/templates/
