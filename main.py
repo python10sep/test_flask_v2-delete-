@@ -16,6 +16,7 @@ test_flask_v2 (project root)
         - __init__.py
         - dal.py
         - flashcard_db.json
+    - requirements.txt
 
 
 #################################################################
