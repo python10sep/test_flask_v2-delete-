@@ -22,9 +22,9 @@ test_flask_v2 (project root)
 #################################################################
 """
 
-
-from flask import Flask, render_template, abort, jsonify
-from models.dal import db
+import json
+from flask import Flask, render_template, abort, jsonify, request, Response
+from models.dal import db, save_to_db
 
 
 app = Flask(__name__)
@@ -46,6 +46,20 @@ def card_view(index):
         )
     except IndexError:
         abort(404)
+
+
+@app.route("/add", methods=["POST"])
+def add_card():
+    data = request.get_json()
+    # validation on request data
+
+    db.append(data)
+    save_to_db(db)
+
+    obj = json.dumps({"success": 201})
+
+    # data validation before response
+    return Response(obj, status=201, mimetype="application/json")
 
 
 @app.route("/api/cards")
